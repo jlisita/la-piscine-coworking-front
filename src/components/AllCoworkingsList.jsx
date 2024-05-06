@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 
 const AllCoworkingsList = () => {
 
@@ -25,6 +26,7 @@ const AllCoworkingsList = () => {
                     return (
                         <article key = {coworking.id}>
                             <h2>name: {coworking.name}</h2> 
+                            <Link to={`/coworkings/details/${coworking.id}`}>Voir le détail du coworking</Link>
                         </article>    
                         );
                 })
