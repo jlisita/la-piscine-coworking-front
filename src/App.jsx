@@ -3,6 +3,8 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AllCoworkingsPage from './pages/AllCoworkingsPage';
+import CoworkingsDetailPage from './pages/CoworkingsDetailPage';
+
 
 function App() {
 
@@ -11,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/coworkings" element = {<AllCoworkingsPage/>} />
+          <Route path="/coworkings/details/:id" element = {<CoworkingsDetailPage/>} />
         </Routes>
       </BrowserRouter>
   )
