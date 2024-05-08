@@ -1,6 +1,6 @@
-import AllCoworkingsList from "../components/AllCoworkingsList";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import AllCoworkingsList from "../../components/public/AllCoworkingsList";
+import Footer from "../../components/public/Footer";
+import Header from "../../components/public/Header";
 
 const AllCoworkingsPage = () => {
 

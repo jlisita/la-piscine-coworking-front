@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
     const [message, setMessage] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -27,7 +29,7 @@ const Login = () => {
         credentials: "include",
         }).then((response) => {
             if (response.status === 200) {
-              setMessage("Connexion réussie");
+                navigate("/admin");
             } else {
               setMessage("Connexion refusée");
             }

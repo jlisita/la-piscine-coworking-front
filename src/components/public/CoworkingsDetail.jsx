@@ -6,7 +6,7 @@ const CoworkingsDetail = () => {
 
     const {id} = useParams();
     
-    const[coworking, setCoworking] = useState([]);
+    const[coworking, setCoworking] = useState(null);
 
     useEffect (() => {
         fetch("http://localhost:5001/api/coworkings/" + id, 

@@ -1,6 +1,6 @@
-import CoworkingsDetail from "../components/CoworkingsDetail";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import CoworkingsDetail from "../../components/public/CoworkingsDetail";
+import Footer from "../../components/public/Footer";
+import Header from "../../components/public/Header";
 
 const CoworkingsDetailPage = () => {
 

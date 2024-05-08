@@ -23,12 +23,12 @@ const AllCoworkingsList = () => {
             {          
                 !coworkings ? <p>Coworking en cours de chargement</p> :
                 coworkings.map((coworking) => {
-                    return (
-                        <article key = {coworking.id}>
-                            <h2>name: {coworking.name}</h2> 
-                            <Link to={`/coworkings/details/${coworking.id}`}>Voir le détail du coworking</Link>
-                        </article>    
-                        );
+                return (
+                    <article key = {coworking.id}>
+                        <h2>name: {coworking.name}</h2> 
+                        <Link to={`/coworkings/details/${coworking.id}`}>Voir le détail du coworking</Link>
+                    </article>    
+                    );
                 })
             } 
         </section>
