@@ -1,4 +1,8 @@
+import { useVerifyToken } from "../../utils/authGuard";
+
 const AdminCreateCoworking = () => {
+
+    useVerifyToken();
 
     const handleCreateCoworking = (event) => {
         event.preventDefault();

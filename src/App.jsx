@@ -9,7 +9,7 @@ import LoginPage from './pages/public/LoginPage';
 import AdminDashboardPage from './pages/admin/AdminDashboardPage'
 import AdminAllCoworkingsPage from './pages/admin/AdminAllCoworkingsPage';
 import AdminCreateCoworkingPage from './pages/admin/AdminCreateCoworkingPage';
-
+import AdminUpdateCoworkingPage from './pages/admin/AdminUpdateCoworkingPage';
 
 function App() {
 
@@ -24,6 +24,7 @@ function App() {
           <Route path="/admin" element={<AdminDashboardPage />} />
           <Route path="/admin/coworkings" element={<AdminAllCoworkingsPage />} />
           <Route path="/admin/coworkings/create" element={<AdminCreateCoworkingPage />} />
+          <Route path="/admin/coworkings/:id/update" element={<AdminUpdateCoworkingPage />} />
         </Routes>
       </BrowserRouter>
   )

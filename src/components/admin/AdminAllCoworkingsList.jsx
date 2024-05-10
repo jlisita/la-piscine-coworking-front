@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useVerifyToken } from "../../utils/authGuard";
 
 const AllCoworkingsList = () => {
 
     const[coworkings, setCoworkings] = useState([]);
-
+    const navigate = useNavigate();
     const [needsRefresh, setNeedRefresh] = useState(false);
+
+    const decodedToken = useVerifyToken();
 
     useEffect (() => {
         fetch("http://localhost:5001/api/coworkings", 
@@ -24,7 +28,10 @@ const AllCoworkingsList = () => {
           method: "DELETE",
           credentials: "include",
         }).then((response) => {
-          setNeedRefresh(!needsRefresh);
+            if (response.status === 401) {
+                navigate("/login");
+                }
+            setNeedRefresh(!needsRefresh);
         });
       };
 
@@ -37,8 +44,13 @@ const AllCoworkingsList = () => {
                     return (
                         <article key = {coworking.id}>
                             <h2>name: {coworking.name}</h2> 
-                            <button onClick={(event) => handleDeleteCoworking(event, coworking.id)}>Supprimer</button>
-                            <Link to={`/coworkings/details/${coworking.id}`}>Voir le détail du coworking</Link>
+                            {/* {decodedToken.role == 1 &&( */}
+                                <>
+                                    <button onClick={(event) => handleDeleteCoworking(event, coworking.id)}>Supprimer</button>
+                                    <Link to={`/admin/coworkings/${coworking.id}/update`}>Modifier</Link>
+                                </>
+                            {/* )  */}
+                            {/* } */}
                         </article>    
                         );
                 })
